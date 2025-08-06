@@ -55,13 +55,6 @@ nav ul li a:hover{
  font-weight: bold;
 }
 
-/*overides h1 in css utils*/
-.logo{
-  font-size: 1.5em;
-  font-weight: bold;
-  color: var(--black);
-  margin: 0;
-}
 
 .login-link{
   background-color: transparent;

@@ -17,7 +17,7 @@
   --text-muted: #6C757D;
 
   /* Backgrounds & Base */
-  --bg-light: #F8F9FA;
+  --bg-light: #f2f3f4;
   --white: #FFFFFF;
   --black: #000000;
 
@@ -112,6 +112,8 @@ button:active{
 
 
 
+
+
 /* utilities */
 
 /* ====== FONTS ===== */
@@ -129,9 +131,10 @@ button:active{
 .bg-blue-primary { background-color: var(--blue-primary); }
 .bg-blue-hover { background-color: var(--blue-hover); }
 .bg-blue-light { background-color: var(--blue-light); }
-.bg-bg-light { background-color: var(--bg-light); }
+.bg-light { background-color: var(--bg-light); }
 .bg-white { background-color: var(--white); }
 .bg-black { background-color: var(--black); }
+.bg-muted { background-color: var(--text-muted);}
 
 /* === Text Colors === */
 .text-dark { color: var(--text-dark); }
@@ -191,15 +194,23 @@ button:active{
 
 
 /* ========= SIMILAR STYLE AROUND THE SITE ===== */
-/* for links that looks like btns but are links */
 
+/*overides h1 in css utils*/
+/* styles for the text that act as logo in header*/
+.logo{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--black);
+  margin: 0;
+}
+
+/* controls the maxwitdth of my site */
 .container{
   max-width: 1200px ;
   margin: 0 auto;
 }
 
-
-
+/* for links that looks like btns but are links */
 .link-btn{
   display: inline-block;
   padding: .5em 1.4em;
@@ -213,4 +224,13 @@ button:active{
 }
 .link-btn:active{
   opacity: .8;
+}
+
+.text-icon-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text-icon-container svg{
+  margin: 0 .3em;
 }
