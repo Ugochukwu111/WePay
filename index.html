@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We Pay</title>
+
+  <link rel="stylesheet" href="styles/utils.css">
+  <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+
+  <div>
+
+    <header>
+      <!--reason for this div inside this header is to set a min-height of 100svh
+            (headers height = 100svh)on the div 
+            this makes the header covers your full screen height be it mobile or destop
+            even in lanscape mode -->
+        <div class="d-flex header-container">
+             <nav class="container d-flex">
+                <h1 class="logo">
+                  We Pay
+                </h1>
+                <ul id="sidebar" class="d-flex" aria-live="polite" aria-label="sidebar closed">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Pricing</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li>
+                    <a href="#" class="link-btn  login-link mobile-auth-links">
+                      LogIn
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="link-btn signup-link  mobile-auth-links bg-blue-primary">
+                      SignUp
+                    </a>
+                  </li>
+                </ul>
+                <div class="d-flex destop-auth-links-container">
+                  <a href="#" class="link-btn login-link">
+                    LogIn
+                  </a>
+                  <a href="#" class="link-btn signup-link bg-blue-primary">
+                    SignUp
+                  </a>
+                </div>
+                <button id="sidebar-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg>
+                </button>
+             </nav>
+
+            <section class="intro-section d-flex">
+                 <!-- used the div below to set the max width of the entire header content text -->
+              <div>
+                 <h1>
+                   Seamlessly Connect and Share with Ease
+                 </h1>
+                 <p class="intro-text">
+                  <strong class="font-sans">
+                    Experience the future of mobile connectivity.Instantly top up
+                    airtime and transfer
+                  </strong>
+                   data to anyone, anywhere with our intuitive and reliable platform.
+                 </p>
+                 <button type="button" class="bg-blue-primary">
+                  Get Started Now
+                 </button>
+              </div>
+
+            </section>
+        </div>
+
+    </header>
+
+    <main>
+         <!--needed to keep section clean🤔(future designs) -->
+      <section>
+          <div class="container features-container">
+             <div class="feature bg-blue-hover">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+              <h3>
+                Instant Airtime Top-Up
+              </h3>
+              <p>
+                <strong>
+                  Recharge your mobile phone or send airtime
+                </strong>
+                 to friends and family in seconds. Fast, secure, and hassle-free.
+              </p>
+
+              <button>
+                Top Up Now
+              </button>
+             </div>
+
+             <div class="feature">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-upload-icon lucide-cloud-upload"><path d="M12 13v8"/><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m8 17 4-4 4 4"/></svg>
+              <h3>
+                Effortless Data Transfer
+              </h3>
+              <p>
+                <strong>
+                 Share data bundles with loved ones or transfer
+                 data
+                </strong>
+                to another device with just a few taps. Stay
+                connected, always.
+              </p>
+
+              <button class="bg-blue-primary">
+                Transfer Data
+              </button>
+             </div>
+
+             <div class="feature bg-blue-hover">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-piggy-bank-icon lucide-piggy-bank"><path d="M11 17h3v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a3.16 3.16 0 0 0 2-2h1a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-1a5 5 0 0 0-2-4V3a4 4 0 0 0-3.2 1.6l-.3.4H11a6 6 0 0 0-6 6v1a5 5 0 0 0 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1z"/><path d="M16 10h.01"/><path d="M2 8v1a2 2 0 0 0 2 2h1"/></svg>
+              <h3>
+                Fixed Savings
+              </h3>
+              <p>
+                <strong>
+                  Secure your future with high-yield fixed savings plans.
+                </strong>
+                Grow your money effortlessly.
+              </p>
+
+              <button class="bg-blue-primary">
+                Start Savings
+              </button>
+             </div>
+
+             <div class="feature bg-blue-hover">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target-icon lucide-target"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              <h3>
+                Target Savings
+              </h3>
+              <p>
+                <strong>
+                  Achieve your financial goals faster by saving towards
+                </strong>
+                specific targets with flexible plans.
+              </p>
+
+              <button>
+                Set a Target
+              </button>
+             </div>
+
+             <div class="feature bg-blue-hover">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-left-icon lucide-arrow-right-left"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+
+              <h3>
+                Swap Coins to Naira
+              </h3>
+              <p>
+                <strong>
+                  Instantly convert your digital coins to Niara
+                </strong>
+                 at competitive rates. Quick and rellable
+              </p>
+
+              <button>
+                Swap Now
+              </button>
+             </div>
+
+             <div class="feature">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-banknote-icon lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+              </svg>
+
+              <h3>
+                Transfer Money to Banks
+              </h3>
+              <p>
+                <strong>
+                  Send money directly  to any bank account with ease 
+                </strong>
+                Fast, secure, and rellable transfers.
+              </p>
+
+              <button class="bg-blue-primary">
+                Transfer Now
+              </button>
+             </div>
+          </div>
+      </section>
+
+    </main>
+
+    <footer class="bg-black text-white">
+      <div class="container">
+        <div class="d-flex upper-footer-container">
+          <div>
+            <h4>
+              We Pay
+            </h4>
+            <p class="text-white">
+              Your trusted partner for seamless airtime, data, and financial services.
+            </p>
+          </div>
+          <div>
+            <h4>
+              Quick Links
+            </h4>
+            <ul>
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><a href="#" class="text-white">About Us</a></li>
+              <li><a href="#" class="text-white">Blog</a></li>
+              <li><a href="#" class="text-white">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#" class="text-white">Airtime Top-UP</a></li>
+              <li><a href="#" class="text-white">Data Transfer</a></li>
+              <li><a href="#" class="text-white">Fixed Savings</a></li>
+              <li><a href="#" class="text-white">Target Savings</a></li>
+              <li><a href="#" class="text-white">Coin Swap</a></li>
+              <li><a href="#" class="text-white">Bank Transfer</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-center">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#" class="text-white">FAQ</a></li>
+            <li><a href="#" class="text-white">Contact Support</a></li>
+            <li><a href="#" class="text-white">Privacy</a></li>
+            <li><a href="#" class="text-white">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  
+<script src="scripts/index.js"></script>
+</body>
+</html>

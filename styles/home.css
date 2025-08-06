@@ -1,0 +1,219 @@
+
+/* ========== HEADER STYLES =============== */
+header{
+  min-height: 100svh;
+}
+
+.header-container{
+  height: 100svh;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.intro-section{
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.intro-section >*{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-evenly;
+  max-width: 900px;
+  padding: 0em .5em;
+}
+.intro-text{
+  color: var(--text-muted);
+  font-size: 1.2em;
+  line-height: 1.5;
+  max-width: 790px;
+}
+
+nav{
+  border-bottom: 1.5px solid var(--blue-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  width: 100%;
+}
+
+nav ul{
+  list-style: none;
+}
+
+header nav ul li a{
+  text-decoration: none;
+  color: var(--black);
+  transition: all 0.3s ease;
+  margin: 0 1em;
+}
+nav ul li a:hover{
+ font-weight: bold;
+}
+
+/*overides h1 in css utils*/
+.logo{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--black);
+  margin: 0;
+}
+
+.login-link{
+  background-color: transparent;
+  color: var(--blue-primary);
+  border: 1px solid var(--blue-primary);
+  transition: all 0.3s ease-in-out;
+}
+
+.login-link:hover{
+  background-color: var(--blue-primary);
+  color: var(--white);
+}
+
+
+.signup-link:hover{
+  background-color: transparent;
+  color: var(--blue-primary);
+  border: 1px solid var(--blue-primary);
+}
+
+#sidebar-btn{
+  display: none;
+}
+.mobile-auth-links{
+  display: none;
+}
+
+/* =========== FETURES SECTION STYLES ============ */
+.features-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2em;
+  padding: 2em 0;
+  max-width: 900px;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+ .feature{
+  border: 1px solid var(--blue-light);
+  box-shadow: 2px 2px 3px var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.8em 1em;
+  border-radius: 1rem;
+  text-align: center;
+  line-height: 1;
+  opacity: .9;
+  transition: all 300ms ease;
+}
+
+.feature:hover{
+  opacity: 1;
+  transform: translateY(-10px);
+}
+.feature:hover svg{
+  stroke: var(--blue-primary);
+}
+
+.feature h3{
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  margin: 1em 0;
+}
+
+.feature svg{
+  transform: scale(1.8);
+  stroke: var(--blue-primary);
+  margin-bottom: 1.5em;
+}
+
+.feature button{
+  margin: 1.5em 0;
+}
+
+
+/* ============ FOOTER STYLES ============ */
+
+footer{
+  padding: 4em 1em;
+}
+footer ul{
+ list-style: none;
+}
+
+
+footer a:hover{
+  transform: translateX(10px);
+}
+
+.upper-footer-container{
+  justify-content: space-between;
+}
+
+
+@media(max-width: 900px){
+
+  #sidebar{
+      position: fixed;
+     top: 0;
+     right: 0;
+     flex-direction: column;
+     justify-content: space-center;
+     z-index: 10;
+     background-color: var(--white);
+    /* Good fallback + best fit */
+        height: 100vh;       /* Fallback for older browsers */
+        height: 100dvh;      /* Dynamic height: accounts for browser chrome resizing */ 
+     width: 80%;
+     align-items: start;
+     padding: 2em 1em;
+     padding-top: 5em;
+     transition: all 350ms ease;
+     transform: translateX(100%); 
+     overflow-y: scroll;
+ 
+  }
+   #sidebar.show{
+       transform: translateX(0%); 
+   }
+
+  #sidebar-btn{
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  right: 1em;
+  background-color: transparent;
+  padding: 0;
+}
+ #sidebar-btn svg{
+  stroke: var(--blue-primary);
+ }
+
+  #sidebar li {
+    width: 100%;
+  }
+
+
+.mobile-auth-links{
+  display: flex;
+  justify-content: center;
+}
+.destop-auth-links-container{
+  display: none;
+ }
+  footer{
+    text-align: center;
+  }
+ .upper-footer-container{
+  padding: 1em;
+  flex-direction: column;
+  align-items: center;
+ }
+ 
+}
