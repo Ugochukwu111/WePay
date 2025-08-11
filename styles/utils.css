@@ -9,8 +9,10 @@
 :root {
   /* Primary Colors */
   --blue-primary: #007BFF;
+  --navy-blue:rgb(2, 2, 153);
   --blue-hover: #a6d3fd;
   --blue-light: #E7F2FF;
+  --red: red;
 
   /* Text Colors */
   --text-dark: #000000;
@@ -81,12 +83,22 @@ a{
   font-family: var(--font-sans);
   text-decoration: none;
   transition: all 0.3s ease;
+  color: var(--black);
+}
+
+ul {
+   list-style-position: outside;
+   list-style: none;
+  padding-left: 20px; /* or adjust as needed */
+  margin-left: 0;
+
 }
 
 p {
   font-size: clamp(1rem, 2vw, 1.2rem); /* Between 16px and 19px */
   line-height: 1.6;
   color: var(--black);
+  font-family: var(--font-sans);
 }
 
 button{
@@ -112,6 +124,11 @@ button:active{
 
 
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 
 /* utilities */
@@ -135,6 +152,9 @@ button:active{
 .bg-white { background-color: var(--white); }
 .bg-black { background-color: var(--black); }
 .bg-muted { background-color: var(--text-muted);}
+.bg-navy-blue{background-color: var(--navy-blue);}
+.bg-transparent{background-color: transparent;}
+.bg-red{background-color: var(--red);}
 
 /* === Text Colors === */
 .text-dark { color: var(--text-dark); }
@@ -144,7 +164,8 @@ button:active{
 .text-blue-light { color: var(--blue-light); }
 .text-white { color: var(--white); }
 .text-black { color: var(--black); }
-
+.text-navy-blue{color: var(--navy-blue);}
+.text-red{color: var(--red);}
 
 
 
@@ -233,4 +254,11 @@ button:active{
 }
 .text-icon-container svg{
   margin: 0 .3em;
+}
+
+.error{
+  visibility: hidden;
+  color: red;
+  font-weight: bold;
+  transition: all 250ms ease;
 }

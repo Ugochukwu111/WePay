@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="styles/utils.css">
+  <link rel="stylesheet" href="styles/dashboard.css">
+
+</head>
+<body>
+
+  <div class="master-container">
+     
+    <aside>
+      <div class="upper-aside-container">
+        <h1 class="logo">
+          We Pay
+        </h1>
+        <ul>
+          <li>
+            <a href="#/" class = "text-icon-container" onclick = "route()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              <span>
+                Home
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#/features" class = "text-icon-container" onclick = "route(event)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+              <span>
+                Features
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#/pricing" class = "text-icon-container" onclick = "route(event)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tag-icon lucide-tag"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+              <span>
+                Pricing
+              </span>
+            </a>
+          </li>
+          
+           <li>
+            <a href="#/contact" class = "text-icon-container" onclick = "route(event)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+              <span>
+                 Contact
+              </span>
+            </a>
+          </li>
+        
+            <li>
+              <a href="#/profile" class = "text-icon-container" onclick = "route(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>
+                  User Profile
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#/settings" class = "text-icon-container" onclick = "route(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-icon lucide-settings"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/><circle cx="12" cy="12" r="3"/></svg>
+                <span>
+                  Settings
+                </span>
+              </a>
+            </li>
+
+        </ul>
+      </div>
+
+      <div>
+        <button id="dashboard-logout-btn" class="text-icon-container bg-transparent text-black">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out-icon lucide-log-out"><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/></svg>
+          <span>
+            Logout
+          </span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="d-flex justify-end">
+        <div class="d-flex align-center ">
+          <h2>Welcome, <span class="full-name">John Doe!</span></h2>
+          <figure class="profile-photo-container">
+            <img src="" alt="">
+          </figure>
+        </div>
+      </header>
+      <main id="main-page">
+        <!-- ================ HOME SECTION =========================== -->
+          <section class="home-section">
+                <div>
+                  <h3>
+                    Buy Airtime
+                  </h3>
+
+                  <form class="form-style">
+                    <div class="form-style-input-container">
+                      <div>
+                        <div class="d-flex justify-s-between align-cneter">
+                          <label for="network">Select  Network</label>
+                          <small class="text-red error network-error">Network not selected</small>
+                        </div>
+                        <select name="network"  id="select-network" required>
+                          <option value="" selected disabled>-- Select your network --</option> 
+                          <option value="MTN">MTN</option>
+                          <option value="GLO">GLO</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <div class="d-flex justify-s-between align-cneter">
+                        <label for="phone">Phone Number</label>
+                        <small class="text-red error phone-error">Phone number too short</small>
+                        </div>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g., 08012345678" required>
+                      </div>
+                      
+                      <div>
+                        <div class="d-flex justify-s-between align-cneter">
+                        <label for="amount">Amount</label>
+                        <small class="text-red error amount-error">Amount too low</small>
+                        </div>
+                        <input type="number" name="amount" id="amount" placeholder="e.g., 1000" required>
+                      </div>
+                    </div>
+
+                    <button class="bg-navy-blue" id="buy-airtime-btn" type="submit">
+                      Buy Airtime
+                    </button>
+                  </form>
+                </div>
+
+          <div class="d-flex justify-s-between align-cneter">
+            <div>
+              <small class="FWB">
+                Airtime Top-up
+                <span class="text-muted d-block">
+                  2023-10-22
+                </span>
+              </small>
+            </div>
+
+            <small class="FWB text-red">-$10.00</small>
+          </div>
+
+
+          <div>
+            <h3>
+              Confirm Airtime Purchase
+            </h3>
+
+            <div class="confirm-purchase-container d-flex flex-column">
+              <p class="d-flex justify-s-between align-center">
+                <span class="text-muted">Network</span>
+                <span>MTN</span>
+              </p>
+
+              <p class="d-flex justify-s-between align-center confirm-phone-number-details">
+                <span class="text-muted">Phone Number</span>
+                <span>08012345678</span>
+              </p>
+
+              <p class="d-flex justify-s-between align-center">
+                <span class="text-muted">
+                Amount
+                </span>
+                <span>
+                  $1,000
+                </span>
+              </p>
+
+            </div>
+
+            <button class="bg-navy-blue">
+              Confirm
+            </button>
+            <button>
+              Cancel
+            </button>
+          </div>
+
+          <div>
+            <div class="enter-pin-container">
+            
+              <div class="d-flex justify-s-between">
+                <h4>
+                  Enter Your PIN
+                </h4>
+                <p>
+                  svg
+                </p>
+              </div>
+
+              <p class="FWB text-muted text-center">
+                Please enter your 4-digit PIN to complete the transacion
+              </p>
+
+              <input type="text"  maxlength="7" inputmode="numeric" name="PIN" id="pin" placeholder=". . . .">
+
+              <button class="w-100 bg-navy-blue">
+                Confirm PIN
+              </button>
+
+            </div>
+          </div>
+          <div>
+            <div>
+              <p>svg</p>
+              <h4>Transaction Successful!</h4>
+              <p>
+                Your transaction has been completed successfully.
+                A confirmation receipt has been sent to your email.
+              </p>
+            </div>
+
+            <button class="
+            bg-navy-blue">
+              Go to Home
+            </button>
+          </div>
+          </section>
+
+        <!-- ============================= CONTACT SECTION =============================== -->
+          <section class="contact-section">
+                    <h3>Contact Us</h3>
+                    <p>
+                      Have questions, feedback or need
+                      assistance? Fill out the form below or reach out to us directly.
+                    </p>
+
+                    <form class="form-style">
+                      <div class="form-style-input-container">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name">
+                          </div>
+
+                          <div>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id ="email"
+                            placeholder="your email@example.com" required>
+                          </div>
+
+
+                          <div>
+                            <label for="Subject">Subject</label>
+                            <input type="text" name="subject" id="subject"
+                            placeholder="Subject of your inquiry">
+                          </div>
+
+                          <div>
+                            <label class="d-block " for="message">Message</label>
+                            <textarea name="message" id="message" placeholder="Type your message here..."></textarea>
+                          </div>
+                      </div>
+                      <button id="send-message-btn" class="bg-navy-blue">
+                        Send Message
+                      </button>
+                    </form>
+
+                    <div>
+                      <h4>Other Ways to Contact Us</h4>
+                      <p class="text-muted text-icon-container">
+                        <span>
+                          support@wepay.com
+                        </span>
+                      </p>
+                      <p class="text-muted text-icon-container d-inline-b">
+                          <span>
+                          +1(555) 123-4567
+                        </span>
+                      
+                      </p>
+                      <p class="text-muted text-icon-container">
+                        <span>
+                          123 WePay Street, City Country
+                        </span>
+                      </p>
+                    </div>
+          </section>
+
+         <!-- =================== USER PROGILE SECTION ========================== -->
+          <section>
+                  <div class="user-details-container">
+                      <figure class="profile-img-container">
+                        <img src="" alt="user profile pic">
+                      </figure>
+
+                      <button id="edit-profile-img-btn" class="btn-reverse">
+                        Edith
+                      </button>
+
+                      <div class="account-details-contaner">
+                        <h1 class="font-sans">
+                          Account Balance
+                        </h1>
+                        <h2 class="font-sans">
+                          $1,250.00
+                        </h2>
+                      </div>
+                  </div>
+
+                    <form id="personal-information-form" class="form-style" action="">
+                          <h3>
+                          Personal Information
+                          </h3>
+
+                        <div class="form-style-input-container">
+                              <div>
+                                <label for="fullname">Name</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe">
+                              </div>
+
+                              <div>
+                                <label for="email">Email</label>
+                                  <input type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+                              </div>
+
+                              <div>
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" name="phone" id="phone" placeholder="+(555) 987-6543">
+                              </div>
+
+                              <div>
+                                <label for="password">Gender</label>
+                                <input type="password" name="password" id="password" placeholder="Create a password">
+                              </div>
+
+                              <div>
+                                <label for="">Address</label>
+                                <input type="text" placeholder=" 123 Main St, Anytown, USA">
+                              </div>
+                        </div>
+
+                              <button class="bg-blue-primary">
+                                Save Changes
+                              </button>
+                    </form>
+
+                <div>
+                    <button id="security-settings-btn" class="btn-reverse">
+                      Security Settings
+                    </button>
+
+                      <form method="POST" class="form-style">
+                        <h3>
+                          Security Settings
+                        </h3>
+                      <div class="form-style-input-container">
+                          <div>
+                            <label for="">Current Password</label>
+                            <input type="password" placeholder="Enter current password" name="currentPassword" id="currentPassword">
+                          </div>
+
+                          <div>
+                            <label for="">New Password</label>
+                            <input type="password" placeholder="Enter new password" name="password" id="password">
+                          </div>
+
+                          <div>
+                            <label for="">Confirm Password</label>
+                            <input type="password" placeholder=" Confirm new password" name="confirmPassword" id="confirmPassword">
+                          </div>
+                      </div>
+
+                      <button class="bg-navy-blue">
+                        Change Password
+                      </button>
+                    </form>
+
+                      <div>
+                        <h3>Linked Bank Accounts</h3>
+
+                        <div class="w-100">
+
+                          <div class="d-flex justify-s-between align-cneter linked-accounts-container">
+                            <div>
+                              <p>
+                                Bank of America
+                              </p>
+                              <p>
+                                **** **** **** 1234
+                              </p>
+                            </div>
+
+                            <button>
+                              verified
+                            </button>
+                          </div>
+
+                          <div class="d-flex justify-s-between align-cneter linked-accounts-container">
+                            <div>
+                              <p>
+                                Bank of America
+                              </p>
+                              <p>
+                                **** **** **** 1234
+                              </p>
+                            </div>
+
+                            <button>
+                              verified
+                            </button>
+                          </div>
+
+                        </div>
+
+                        <button class="btn-reverse">
+                          + Add New Bank Account
+                        </button>
+
+                      </div>
+                </div>
+          </section>
+
+       <!-- ============== SETTINGS SECTION ============= -->
+          <section class="settings-section">
+            <h3>Settings</h3>
+
+            <ul class="">
+              <li>
+                <a href="#">
+                  <span>
+                    Login
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>
+                    Payment Settings
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>
+                    Security Questions
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>
+                    Push Notifications
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>
+                    Email Notification
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>
+                    Speak On
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>
+                    About WePay
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span>
+                    Close WePay Account
+                  </span>
+                </a>
+              </li>
+            </ul>
+
+            <button id="logout-btn">
+              Logout
+            </button>
+          </section>
+
+      </main>
+    </div>
+  </div>
+  <script src="scripts/dashboard.js"></script>
+</body>
+</html>

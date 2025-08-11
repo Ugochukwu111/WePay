@@ -2,7 +2,6 @@ body{
   background-color: var(--blue-primary);
 }
 
-
 header{
   padding: .6em 1.5em;
 }
@@ -12,22 +11,28 @@ main{
 }
 
 form{
-  padding: 1.5em 2em;
+  padding: 1.5em 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--white);
   border-radius: 1rem;
+  padding-top: 3em;
+  box-shadow: 2px 2px 3px var(--text-muted);
+  width: 100%;
+  max-width: 600px;
 }
 
 .input-container{
   width: 100%;
   margin: 1em 0;
 }
+.input-container >*{
+  margin: .5em;
+}
 
 form label{
   display: block;
-   margin-top: .5em ;
    font-family: var(--font-sans);
    font-weight: bold;
 }
@@ -48,8 +53,6 @@ form button{
 form input:focus{
   outline: 1px solid var(--blue-primary);
 }
-
-
 
 .form-btn-container{
   display: flex;
@@ -79,4 +82,63 @@ form input:focus{
 }
 .google-sign-up-btn:hover svg{
   transform: translateX(-10px);
+}
+
+.fullName-error.show{
+  visibility: visible;
+}
+.password-error.show{
+  visibility: visible;
+}
+.phone-error.show{
+  visibility: visible;
+}
+.email-error.show{
+  visibility: visible;
+}
+.signin-email-error.show{
+  visibility: visible;
+}
+.signin-password-error.show{
+    visibility: visible;
+    max-width: 300px;
+    padding: .3em;
+}
+
+/* Password rules container hidden by default */
+.sign-up-password-error-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Show state */
+.sign-up-password-error-container.show {
+  max-height: 300px; /* enough space for all rules */
+  opacity: 1;
+}
+
+/* Shrink when all rules are passed */
+.sign-up-password-error-container.shrink {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Individual rules */
+.sign-up-password-error-container span {
+  display: block;
+  margin: 4px 0;
+}
+
+/* Passed rule style */
+.sign-up-password-error-container span.passed {
+  color: #4caf50; /* green */
+  font-weight: 500;
+}
+
+@media(max-width: 900px){
+   form{padding: 1.5em 1.5em;} 
 }
