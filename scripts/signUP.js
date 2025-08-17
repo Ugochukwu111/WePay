@@ -1,6 +1,22 @@
+import {toggleViewPassword , popUpContainer} from './utils/reUseableFunctions.js';
+import { signUpSuccessHTML } from './utils/htmlComponents.js';
+
+
+//no need requerying the dom for this  since am usoing it many places
+// inore am only using it as an overlay for successful sign up mssage
+const popUpContainerEl = document.querySelector('.notification-container');
+
+
+// show and his password script
+const seePasswordBtn = document.querySelector('.view-password-btn');
+seePasswordBtn.addEventListener('click', ()=>{
+  toggleViewPassword('password');
+});
+
+
+
 const passwordEl = document.getElementById("password");
 const signUpPasswordErrors = document.querySelector('.sign-up-password-error-container');
-console.log(signUpPasswordErrors)
 const hyphenIcon = '—';
 const goodIcon = '✓';
 const warningIcon = `<svg class="fill-red" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#f44336"><path d="M117.23-184 480-784l362.77 600H117.23ZM175-216h610L480-724 175-216Zm304.79-63.38 q8.67 0 14.75-5.87t6.08-14.54q0-8.67-5.87-14.75t-14.54-6.08q-8.67 0-14.75 5.87t-6.08 14.54q0 8.67 5.87 14.75t14.54 6.08ZM464-368.62h32v-192h-32v192Z"/></svg>`;
@@ -137,19 +153,17 @@ e.preventDefault();
 
    if (!res.ok) {
     const errorData = await res.json().catch(() => null);
-      console.log('Backend error:', errorData);
     throw new Error(errorData?.message || `HTTP error: ${res.status}`);
   }
 
     const data = await res.json();
-        console.log(data.user)
     localStorage.setItem('userData', JSON.stringify( data.data.user));
-    const userData = JSON.parse(localStorage.getItem('userData')) ;
-   
-   window.location.href = 'dashboard.html';
+    const userData = JSON.parse(localStorage.getItem('userData'));
+
+    popUpContainer(popUpContainerEl, 'show');
+    popUpContainerEl.innerHTML =  signUpSuccessHTML();
 
   } catch (err) {
-     console.error('❌ Error submitting form:', err);
 
   const message = err.message || 'Something went wrong. Please try again.';
 

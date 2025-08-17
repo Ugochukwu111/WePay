@@ -218,6 +218,59 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*overides h1 in css utils*/
 /* styles for the text that act as logo in header*/
+.notification-container{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding: 1em;
+
+  background: rgba(0, 0, 0, 0.3); /* transparent dark overlay */
+  backdrop-filter: blur(1px);     /* blur the background */
+  -webkit-backdrop-filter: blur(1px); /* Safari support */
+
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.notification-container.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.notification-container.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.notification-popup {
+  border-radius: 16px;
+  padding: 2em;
+  max-width: 400px;
+  width: 100%;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* soft shadow */
+  text-align: center;
+  animation: fadeInScale 0.3s ease; /* subtle entry animation */
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 .logo{
   font-size: 1.5em;
   font-weight: bold;
@@ -232,6 +285,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* for links that looks like btns but are links */
+
+
 .link-btn{
   display: inline-block;
   padding: .5em 1.4em;

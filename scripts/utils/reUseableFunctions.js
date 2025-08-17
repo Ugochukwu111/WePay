@@ -1,4 +1,4 @@
-export function PopUpContainer(containerElement, open) {
+export function popUpContainer(containerElement, open) {
   if (containerElement) {
     if (open === 'show') {
       containerElement.classList.remove('hide');
@@ -12,4 +12,16 @@ export function PopUpContainer(containerElement, open) {
   } else {
     console.error(`Container not found: ${containerElement}`);
   }
+}
+
+// shows and hide inputed password
+export function toggleViewPassword(passwordInputID){
+   const passwordInput = document.getElementById(`${passwordInputID}`);
+   if (passwordInput){
+        if (passwordInput.type == "password"){
+          passwordInput.type = "text";
+        }else if (passwordInput.type == "text"){
+          passwordInput.type = "password";
+        }
+   }
 }

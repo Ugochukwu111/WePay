@@ -7,15 +7,22 @@
   <link rel="stylesheet" href="styles/utils.css">
   <link rel="stylesheet" href="styles/auth.css">
 
-  <title>We Pay | signUp</title>
+  <title>WePay | signUp</title>
 </head>
 <body>
 
+
+
   <div>
+
+    <div class="notification-container hide">
+    </div>
 
     <header class="bg-light">
       <h1 class="logo">
-        We Pay
+        <a href="index.html">
+          WePay
+        </a>
       </h1>
 
       <p class="font-sans FWB text-blue-primary">
@@ -32,7 +39,7 @@
         <p class="text-muted text-center font-sans ">
           Join 
           <strong>
-            We Pay
+            WePay
           </strong>
            to manage your airtime, data, and finances.
         </p>
@@ -68,12 +75,15 @@
             <input type="tel" name="phone" id="phone" placeholder=" eg +2347046000000" >
           </div>
 
-          <div>
+          <div class="password-container">
             <div class="d-flex align-center justify-s-between">
                <label for="password">Password</label>
               <small class="error password-error"> password should be greater than or eaqual to 8</small>
             </div>
             <input type="password" name="password" id="password" placeholder="Create a password">
+            <button type="button" class="view-password-btn">
+               <!-- used bg image -->
+            </button>
           </div>
           <div class="sign-up-password-error-container   w-100 ">
               <span class="text-icon-container signup-password-error-msgs"> — &nbsp; 1 upper & lowercase</span>
@@ -113,9 +123,10 @@
       </form>
 
     </main>
+
   </div>
   
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="scripts/signUP.js"></script>
+  <script type="module" src="scripts/signUP.js"></script>
 </body>
 </html>

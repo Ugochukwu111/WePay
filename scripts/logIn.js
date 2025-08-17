@@ -1,3 +1,14 @@
+import {toggleViewPassword} from './utils/reUseableFunctions.js';
+
+
+// show and his password script
+const seePasswordBtn = document.querySelector('.view-password-btn');
+seePasswordBtn.addEventListener('click', ()=>{
+  toggleViewPassword('password');
+});
+
+
+
 
 const loginForm = document.querySelector('form');
 const emailEl = document.getElementById('email');

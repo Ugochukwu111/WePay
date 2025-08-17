@@ -203,6 +203,10 @@ footer a:hover{
   footer{
     text-align: center;
   }
+  footer h4{
+    text-align: center;
+    border: 2px solid red;
+  }
  .upper-footer-container{
   padding: 1em;
   flex-direction: column;

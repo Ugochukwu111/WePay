@@ -84,6 +84,21 @@ form input:focus{
   transform: translateX(-10px);
 }
 
+.sign-up-success-container svg{
+  fill: green;
+  stroke: var(--white);
+  /* transform: ; */
+}
+.sign-up-success-container a{
+  margin: 1em 0;
+  margin-top: 1.8em;
+  border-radius: .5em;
+}
+
+
+
+
+
 .fullName-error.show{
   visibility: visible;
 }
@@ -138,6 +153,29 @@ form input:focus{
   color: #4caf50; /* green */
   font-weight: 500;
 }
+
+.password-container{
+  position: relative;
+}
+
+.view-password-btn{
+  position: absolute;
+  padding: 0;
+  right: .5em;
+  background-color: transparent;
+  background-image: url('/assets/eye.png');
+  width: 25px;
+  height: 25px;
+  background-position: center;
+}
+
+#password[type="text"] + .view-password-btn {
+  background-image: url('/assets/eye-closed.png');
+}
+
+
+
+
 
 @media(max-width: 900px){
    form{padding: 1.5em 1.5em;} 

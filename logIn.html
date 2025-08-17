@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles/utils.css">
   <link rel="stylesheet" href="styles/auth.css">
 
-  <title>We Pay | LogIn</title>
+  <title>WePay | LogIn</title>
 </head>
 <body>
 
@@ -15,7 +15,9 @@
 
     <header class="bg-light">
       <h1 class="logo">
-        We Pay
+        <a href="index.html">
+          WePay
+        </a>
       </h1>
 
       <p class="font-sans FWB text-blue-primary">
@@ -42,8 +44,16 @@
           </div>
 
           <div> 
-            <label for="password">Password</label>
-            <input type="password" autocomplete="password" name="password" id="password" placeholder="Create a password">
+            <label for="password">
+              Password
+            </label>
+            <div class="password-container">
+             <input type="password" autocomplete="password" name="password" id="password" placeholder="Create a password">
+            <button type="button" class="view-password-btn">
+               <!-- used bg image -->
+            </button>
+            </div>
+
             <small class="error signin-password-error">
             <div class="d-flex align-center justify-s-between">
             </small>
@@ -86,6 +96,6 @@
 
   </div>
   
-  <script src="scripts/logIn.js"></script>
+  <script type="module" src="scripts/logIn.js"></script>
 </body>
 </html>
