@@ -11,6 +11,8 @@
 <body>
 
   <div>
+    <div class="notification-container hide">
+    </div>
 
     <header>
       <!--reason for this div inside this header is to set a min-height of 100svh
@@ -26,8 +28,7 @@
                 </h1>
                 <ul id="sidebar" class="d-flex" aria-live="polite" aria-label="sidebar closed">
                   <li><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Pricing</a></li>
+                  <li><a href="dashboard.html">Features</a></li>
                   <li><a href="#">Contact</a></li>
                   <li>
                     <a href="logIn.html" class="link-btn  login-link mobile-auth-links">
@@ -57,14 +58,19 @@
                  <!-- used the div below to set the max width of the entire header content text -->
               <div>
                  <h1>
-                   Seamlessly Connect and Share with Ease
+                   Transact with 
+                   <span class="d-block text-blue-primary ease-text">
+                    Ease !
+                    <svg class="curve-svg" width="130" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 30 Q60 70 110 30" stroke="#007BFF" stroke-width="8" fill="transparent" stroke-linecap="round"/>
+                    </svg>
+                   </span>
                  </h1>
                  <p class="intro-text">
                   <strong class="font-sans">
-                    Experience the future of mobile connectivity.Instantly top up
-                    airtime and transfer
+                   Seamlessly send and receive money, pay bills, save,
                   </strong>
-                   data to anyone, anywhere with our intuitive and reliable platform.
+                    and take full control of your finances — securely with WePaY .
                  </p>
                  <button type="button" class="bg-blue-primary">
                   Get Started Now
@@ -83,13 +89,12 @@
              <div class="feature bg-blue-hover">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
               <h3>
-                Instant Airtime Top-Up
+                Airtime Top-Up
               </h3>
               <p>
                 <strong>
-                  Recharge your mobile phone or send airtime
+                 Top up in seconds. Fast, secure, for friends and family.
                 </strong>
-                 to friends and family in seconds. Fast, secure, and hassle-free.
               </p>
 
               <button>
@@ -100,15 +105,12 @@
              <div class="feature">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-upload-icon lucide-cloud-upload"><path d="M12 13v8"/><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m8 17 4-4 4 4"/></svg>
               <h3>
-                Effortless Data Transfer
+                Data Transfer
               </h3>
               <p>
                 <strong>
-                 Share data bundles with loved ones or transfer
-                 data
+                  Send data in seconds. Stay connected, always.
                 </strong>
-                to another device with just a few taps. Stay
-                connected, always.
               </p>
 
               <button class="bg-blue-primary">
@@ -123,9 +125,8 @@
               </h3>
               <p>
                 <strong>
-                  Secure your future with high-yield fixed savings plans.
+                  Save smart. Earn more. Grow your money effortlessly.
                 </strong>
-                Grow your money effortlessly.
               </p>
 
               <button class="bg-blue-primary">
@@ -140,9 +141,8 @@
               </h3>
               <p>
                 <strong>
-                  Achieve your financial goals faster by saving towards
+                 Save for what matters, faster — with flexible plans for specific goals.
                 </strong>
-                specific targets with flexible plans.
               </p>
 
               <button>
@@ -151,25 +151,24 @@
              </div>
 
              <div class="feature bg-blue-hover">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-left-icon lucide-arrow-right-left"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-landmark-icon lucide-landmark"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg>
 
               <h3>
-                Swap Coins to Naira
+                Transfer to WE PAY
               </h3>
               <p>
                 <strong>
-                  Instantly convert your digital coins to Niara
+                   Send money to WE PAY users instantly — simple and seamless. 
                 </strong>
-                 at competitive rates. Quick and rellable
               </p>
 
               <button>
-                Swap Now
+                Transfer Now
               </button>
              </div>
 
              <div class="feature">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-banknote-icon lucide-banknote"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-landmark-icon lucide-landmark"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg>
               </svg>
 
               <h3>
@@ -177,9 +176,8 @@
               </h3>
               <p>
                 <strong>
-                  Send money directly  to any bank account with ease 
+                   Send money to WE PAY users instantly — simple and seamless. 
                 </strong>
-                Fast, secure, and rellable transfers.
               </p>
 
               <button class="bg-blue-primary">
@@ -250,6 +248,6 @@
 
   </div>
   
-<script src="scripts/index.js"></script>
+<script type="module" src="scripts/index.js"></script>
 </body>
 </html>

@@ -9,6 +9,9 @@ header{
   flex-direction: column;
   overflow-y: auto;
 }
+
+
+
 .intro-section{
   flex: 1;
   align-items: center;
@@ -30,6 +33,28 @@ header{
   font-size: 1.2em;
   line-height: 1.5;
   max-width: 790px;
+}
+
+
+
+.ease-text{
+  position: relative;
+}
+.curve-svg{
+  position: absolute;
+  right: 1.3em;
+  bottom: -.5em;
+}
+
+.intro-section > div > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s ease-out;
+}
+
+.intro-section > div > *.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 nav{
@@ -103,8 +128,15 @@ nav ul li a:hover{
   border-radius: 1rem;
   text-align: center;
   line-height: 1;
-  opacity: .9;
   transition: all 300ms ease;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+.feature.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .feature:hover{
@@ -151,6 +183,12 @@ footer a:hover{
 
 
 @media(max-width: 900px){
+
+  .curve-svg{
+  position: absolute;
+  right: .9em;
+  bottom: -.9em;
+}
 
   #sidebar{
       position: fixed;
@@ -205,7 +243,6 @@ footer a:hover{
   }
   footer h4{
     text-align: center;
-    border: 2px solid red;
   }
  .upper-footer-container{
   padding: 1em;
