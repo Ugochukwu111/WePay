@@ -4,18 +4,28 @@
 
   const popUpContainerEl = document.querySelector('.notification-container');
 
-(() => {
+  function isLoggedIn()  {
   const user = JSON.parse(localStorage.getItem('userData'));
   if (!user) {
     popUpContainer(popUpContainerEl, 'show'); // uses outer variable
     popUpContainerEl.innerHTML = generateNotLoggedInHTML();
-    return false;
+    return ;
   }
-  return true;
-})();
+
+};
   
   
-  
+  const featuresContainer = document.querySelector('.features-container');
+
+featuresContainer.addEventListener('click', (e) => {
+  if (e.target.tagName === 'BUTTON') {
+    isLoggedIn(); // just runs the function to show popup if needed
+    const user = JSON.parse(localStorage.getItem('userData'));
+    if (user) {
+      window.location.href = 'dashboard.html';
+    }
+  }
+});
   
   
   /**============ SIDE BAR SCRIPTS ================*/
