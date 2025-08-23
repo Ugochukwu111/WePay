@@ -3,77 +3,47 @@
 function updateUserDetailsHtml(){
   let userData = JSON.parse(localStorage.getItem('userData'));
   const fullNameHTML = document.querySelector('.full-name');
-
-  fullNameHTML.textContent = userData.fullName  || 'John Doe' ;
-
+  const firstName =  userData?.fullName?.split(" ", 1)[0] || 'John Doe';
+  fullNameHTML.textContent = firstName || 'John Doe' ;
 }
 updateUserDetailsHtml();
 
 
-function confirmAirtimePurchaseHTML(network , phoneNumber , amount) {
-  const html = `
-      <div>
-            <h3>
-              Confirm Airtime Purchase
-            </h3>
+                               //================== Simple routing ============= //
+    const sections = document.querySelectorAll("main section");
+    const navLinks = document.querySelectorAll("aside a");
 
-            <div class="confirm-purchase-container d-flex flex-column">
-              <p class="d-flex justify-s-between align-center">
-                <span class="text-muted">Network</span>
-                <span>${network}</span>
-              </p>
+    function showSection(hash) {
+      sections.forEach(sec => {
+        if ("#" + sec.id === hash) {
+          sec.classList.add("active");  // show current section
+        } else {
+             sec.classList.remove("active");   // hide all others
+        }
+      });
 
-              <p class="d-flex justify-s-between align-center confirm-phone-number-details">
-                <span class="text-muted">Phone Number</span>
-                <span>${phoneNumber}</span>
-              </p>
+        // Highlight active nav link
+        navLinks.forEach(link => {
+          if (link.getAttribute("href") === hash) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+    }
 
-              <p class="d-flex justify-s-between align-center">
-                <span class="text-muted">
-                Amount
-                </span>
-                <span>
-                  ${amount}
-                </span>
-              </p>
+    // On first load
+    window.addEventListener("DOMContentLoaded", () => {
+      let hash = window.location.hash || "#home"; // default to home
+      showSection(hash);
+    });
 
-            </div>
+    // On hash change (navigation / back / forward)
+    window.addEventListener("hashchange", () => {
+      let hash = window.location.hash || "#home";
+      showSection(hash);
+    });
 
-            <button class="bg-navy-blue">
-              Confirm
-            </button>
-            <button>
-              Cancel
-            </button>
-          </div>
-  `;
 
-  return html;
-}
 
-function enterPinHtml(){
-  const html = `
-    <div class="enter-pin-container">
-            
-              <div class="d-flex justify-s-between">
-                <h4>
-                  Enter Your PIN
-                </h4>
-                <p>
-                  svg
-                </p>
-              </div>
 
-              <p class="FWB text-muted text-center">
-                Please enter your 4-digit PIN to complete the transacion
-              </p>
-
-              <input type="text"  maxlength="7" inputmode="numeric" name="PIN" id="pin" placeholder=". . . .">
-
-              <button class="w-100 bg-navy-blue">
-                Confirm PIN
-              </button>
-
-            </div>
-  `;
-}

@@ -11,8 +11,10 @@
   --blue-primary: #007BFF;
   --navy-blue:rgb(2, 2, 153);
   --blue-hover: #a6d3fd;
-  --blue-light: #E7F2FF;
+  --blue-light: #cce3ff;
   --red: red;
+  --green : green;
+  --light-green : lightgreen;
 
   /* Text Colors */
   --text-dark: #000000;
@@ -104,22 +106,23 @@ p {
 button{
   font-family: var(--font-sans);
   font-size: clamp(1rem, 2vw, 1.2rem); /* Between 16px and 19px */
-  padding: .5em 1.2em;
+  padding: .5em 1em;
   border: none;
   margin: .3em .5em;
   border-radius: 1rem;
   cursor: pointer;
   transition: all .3s ease;
-  background-color: var(--blue-hover);
+  background-color: var(--blue-primary);
   font-weight: 600;
   color: var(--white);
 }
 
 button:hover {
   background-color: var(--blue-primary);
+  opacity: .8;
 }
 button:active{
-  opacity: .8;
+  opacity: .6;
 }
 
 
@@ -155,6 +158,8 @@ input[type=number]::-webkit-outer-spin-button {
 .bg-navy-blue{background-color: var(--navy-blue);}
 .bg-transparent{background-color: transparent;}
 .bg-red{background-color: var(--red);}
+.bg-green{background-color: var(--green);}
+.bg-light-green{background-color: var(--light-green);}
 
 /* === Text Colors === */
 .text-dark { color: var(--text-dark); }
@@ -166,6 +171,9 @@ input[type=number]::-webkit-outer-spin-button {
 .text-black { color: var(--black); }
 .text-navy-blue{color: var(--navy-blue);}
 .text-red{color: var(--red);}
+.text-green{color: var(--green);}
+.text-light-green{color: var(--light-green);}
+
 
 
 
@@ -215,6 +223,18 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /* ========= SIMILAR STYLE AROUND THE SITE ===== */
+
+.pd-normal{ padding: .3em .8em;}
+
+/* margin */
+.MS{margin: .5em 0;}
+.M{margin: 1em 0;}
+.ML{margin: 1.5em 0;}
+
+/* border radius */
+.br{border-radius: .5rem;}
+.br-curve{border-radius: 1rem;}
+.br-curved{border-radius: 2rem;}
 
 /*overides h1 in css utils*/
 /* styles for the text that act as logo in header*/
@@ -308,7 +328,7 @@ input[type=number]::-webkit-outer-spin-button {
   justify-content: center;
 }
 .text-icon-container svg{
-  margin: 0 .3em;
+  margin: 0 0em;
 }
 
 .error{

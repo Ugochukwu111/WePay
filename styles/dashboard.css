@@ -9,13 +9,6 @@
   width: 100%;
 }
 
-.home-section{
-  /* height: 100%; */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: .5em 0;
-}
 
 .confirm-purchase-container{
   border: .5px solid var(--text-muted);
@@ -71,19 +64,23 @@ button{
 }
 
 
-section{
-  width: 100%;
-  padding: 2em 0;
-  border: 2px solid red;
-  margin: 5em 0;
-}
-
 .logo{
-  padding: .5em 1em;
+  padding: 0;
+}
+.logo a{
+  margin: 0;
+  padding: .5em;
 }
 
 aside ul{
   padding-left: 0;
+}
+aside a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+aside a svg {
+  transition: fill 0.3s ease, color 0.3s ease;
 }
 
 
@@ -124,16 +121,9 @@ aside a{
   border-radius: inherit;
 }
 
-aside a:hover,
-aside a:focus{
-  background-color: var(--blue-primary);
-  color: var(--white);
-}
 
-aside a:focus svg{
-  fill: var(--white);
-  color: var(--black);
-}
+
+
 
 .upper-aside-container{
   padding-right: 1em;
@@ -176,7 +166,7 @@ header h2{
 
 main{
   flex: 1;
-  padding: .5em 1.5em;
+  padding: .5em 1em;
   overflow-y: auto;
 }
 
@@ -200,7 +190,7 @@ h2 {
 }
 h3 {
   font-size: clamp(.7rem, 4vw, 1.5rem); /* Between 25px and 35px */
-  margin: 1.5em 0;
+  margin: 1em 0;
 }
 h4 {
   font-size: clamp(.7rem, 3.5vw, 1.2rem); /* Between 22px and 32px */
@@ -286,6 +276,57 @@ h4 {
 #logout-btn:active{
   opacity: .75;
 }
+/* base state */
+main section {
+   display: none;
+   padding: 1em 0;
+}
+
+/* visible state */
+main section.active {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+/* ============ sections styling =========== */
+.home-section{
+  border: 2px solid red;
+  height: 100%;
+  padding-top: 0;
+}
+
+.home-section h3{
+  margin: 0;
+}
+
+.Scheduled-btn-container button{
+  margin-inline: .3em;
+  font-size: 1rem;
+}
+
+.scheduled-btn:hover{
+  color: var(--white);
+  background-color: var(--navy-blue);
+}
+
+.bank-transfer-container{
+  border: 2px solid  var(--blue-hover);
+  width: 100%;
+  max-width: 600px;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px var(--blue-hover);
+
+  padding: 1em;
+  margin: 2em 1em;
+}
+.bank-transfer-container h4{
+  margin: 0;
+}
+    
+
+
 
 
 /* ============== CLASSLIST =============== */
@@ -297,4 +338,14 @@ h4 {
 }
 .network-error.show{
   visibility: visible;
+}
+
+aside a.active {
+  background-color: var(--blue-primary);
+  color: var(--white);
+}
+
+aside a.active svg {
+  fill: var(--white);
+  color: var(--black);
 }
