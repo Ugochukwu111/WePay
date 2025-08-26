@@ -1,4 +1,9 @@
 
+import {generateAccountVerificationHTML,generateEnterPinHtml } from './utils/htmlComponents.js';
+
+import { popUpContainer } from './utils/reUseableFunctions.js';
+
+const popUpContainerEl = document.querySelector('.notification-container');
 
 function updateUserDetailsHtml(){
   let userData = JSON.parse(localStorage.getItem('userData'));
@@ -46,4 +51,77 @@ updateUserDetailsHtml();
 
 
 
+    const intrabankTransferWrapper = document.querySelector('.bank-transfer-verify-account-wrapper');
+    const intraTransferMoneyBtn = document.getElementById('intra-transfer-money-btn');
+   
+    intraTransferMoneyBtn?.addEventListener('click',()=>{
+      intrabankTransferWrapper.innerHTML = generateAccountVerificationHTML();
 
+      const confirmTranferBtn = document.getElementById('confirm-intra-trasfer');
+
+      confirmTranferBtn?.addEventListener('click',()=>{
+        popUpContainer(popUpContainerEl, 'show');
+        popUpContainerEl.innerHTML = generateEnterPinHtml();
+         setupPinInput();
+      });
+
+    });
+
+function setupPinInput() {
+  const pinInputs = document.querySelectorAll('.acc-PIN-input');
+  const buttons = document.querySelectorAll('.acc-PIN-btn');
+  const backspaceBtn = document.querySelector('.backspace');
+
+  // Helper: move to next/previous input
+  function focusInput(index) {
+    if (index >= 0 && index < pinInputs.length) {
+      pinInputs[index].focus();
+    }
+  }
+
+  // Fill PIN inputs when number button clicked
+  buttons.forEach((btn) => {
+    if (!btn.classList.contains('backspace')) {
+      btn.addEventListener('click', () => {
+        for (let i = 0; i < pinInputs.length; i++) {
+          if (!pinInputs[i].value) {
+            pinInputs[i].value = btn.textContent.trim();
+            focusInput(i + 1);
+            break;
+          }
+        }
+      });
+    }
+  });
+
+  // Handle backspace button
+  if (backspaceBtn) {
+    backspaceBtn.addEventListener('click', () => {
+      for (let i = pinInputs.length - 1; i >= 0; i--) {
+        if (pinInputs[i].value) {
+          pinInputs[i].value = '';
+          focusInput(i);
+          break;
+        }
+      }
+    });
+  }
+
+  // Optional: allow manual typing (if you remove readonly later)
+  pinInputs.forEach((input, idx) => {
+    input.addEventListener('input', () => {
+      if (input.value.length > 1) {
+        input.value = input.value.slice(0, 1); // restrict to 1 char
+      }
+      if (input.value) {
+        focusInput(idx + 1);
+      }
+    });
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace' && !input.value) {
+        focusInput(idx - 1);
+      }
+    });
+  });
+}

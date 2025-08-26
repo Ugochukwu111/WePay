@@ -1,4 +1,25 @@
 
+input{
+  display: block;
+  width: 100%;
+  padding: .75em 1.2em;
+  border-radius: .5rem;
+  margin: .2em;
+  border: 1px solid var(--blue-hover);
+  background-color: var(--lighter-blue);
+  outline: 2px solid transparent;
+  transition: all 250ms ease;
+  font-weight: 600;
+  font-size: .9rem;
+  /* font-family: var( --font-sans); */
+}
+input:focus{
+border: 1px solid var(--blue-primary);
+ outline: 1px solid var(--blue-primary);
+}
+
+
+
 .text-icon-container{
  justify-content: start;
 }
@@ -7,6 +28,16 @@
 }
 .w-100{
   width: 100%;
+}
+.account-no-input-container{
+  position: relative;
+}
+.scan-button{
+  padding: .1em;
+  
+  position: absolute;
+  top: 50%;
+  right: .5em;
 }
 
 
@@ -210,31 +241,6 @@ h4 {
   border-radius: 1rem;
   margin-top: 1em ;
 }
-.form-style{
-  width: 100%;
-   max-width: 500px;
-  padding: .5em;
-}
-
-.form-style-input-container >*{
-  margin: .25em 0;
-}
-
-.form-style-input-container input,textarea,select{
- width: 100%;
- padding: .7em 1.2em;
- background-color: rgb(232, 230, 230);
- border: none;
- border-radius: .5rem;
- border: 1px solid rgb(201, 201, 201);
- resize: vertical;
-}
-
-
-#personal-information-form button{
-  padding: .7em 1.2em;
-  margin: 1em 0;
-}
 
 .linked-accounts-container{
   border: 1px solid var(--text-muted);
@@ -292,8 +298,7 @@ main section.active {
 
 /* ============ sections styling =========== */
 .home-section{
-  border: 2px solid red;
-  height: 100%;
+  height: auto;
   padding-top: 0;
 }
 
@@ -311,19 +316,62 @@ main section.active {
   background-color: var(--navy-blue);
 }
 
-.bank-transfer-container{
+.custom-container{
   border: 2px solid  var(--blue-hover);
   width: 100%;
   max-width: 600px;
   border-radius: 1rem;
   box-shadow: 2px 2px 2px var(--blue-hover);
+  background-color: var(--white);
 
   padding: 1em;
   margin: 2em 1em;
 }
-.bank-transfer-container h4{
+
+
+.custom-container h4{
   margin: 0;
 }
+.acount-verified-container{
+  padding: .3em 1em;
+  border-radius: .5rem;
+}
+
+#verify-account-details-container ul li{
+  border-bottom: 1px dotted var(--text-muted);
+  padding: .8em .5em;
+  font-weight: 600;
+  color: var(--navy-blue);
+  font-family: var(--font-sans);
+}
+
+.enter-pin-container{
+   width: fit-content;
+   padding: 2em;
+}
+
+.account-pin-container input{
+  width: 50px;
+  height: 50px;
+}
+
+.enter-acc-PIN-btn-container{
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: .8em;
+}
+.enter-acc-PIN-btn-container button{
+  background-color: transparent;
+  border: 1px solid var(--blue-hover);
+  color: var(--navy-blue);
+  font-weight: 700;
+  box-shadow: 1px 1px 2px var(--text-muted);
+  padding: .5em 0;
+}
+.enter-acc-PIN-btn-container button:hover{
+  background-color: var(--lighter-blue);
+}
+
     
 
 

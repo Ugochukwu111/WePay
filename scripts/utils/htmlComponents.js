@@ -78,31 +78,64 @@ export function confirmAirtimePurchaseHTML(network , phoneNumber , amount) {
   return html;
 }
 
-export function enterPinHtml(){
+export function generateEnterPinHtml(){
   const html = `
-    <div class="enter-pin-container">
-            
-              <div class="d-flex justify-s-between">
-                <h4>
-                  Enter Your PIN
-                </h4>
-                <p>
-                  svg
-                </p>
-              </div>
+    <div class=" custom-container enter-pin-container d-flex flex-column justify-center align-center">
+      <h4 class="text-center">
+        WePay
+      </h4>
+      <p class="text-center FWB">
+       Enter Transaction PIN
+      </p>
+       <small class="text-center text-muted font-sans">
+        Please enter your 4-digit PIN to confirm this payment 
+       </small>
 
-              <p class="FWB text-muted text-center">
-                Please enter your 4-digit PIN to complete the transacion
-              </p>
+       <div class=" d-flex flex-column">
+       <div class="d-flex account-pin-container">
+          <input type="text"  inputmode="none" 
+            readonly autocomplete="off" class="acc-PIN-input" maxlength="1" pattern="[0-9]*" placeholder="" autofocus>
 
-              <input type="text"  maxlength="7" inputmode="numeric" name="PIN" id="pin" placeholder=". . . .">
+          <input type="text"  inputmode="none" 
+            readonly autocomplete="off" class="acc-PIN-input" maxlength="1" pattern="[0-9]*" placeholder="">
+          <input type="text"  inputmode="none" 
+            readonly autocomplete="off" class="acc-PIN-input" maxlength="1" pattern="[0-9]*" placeholder="">
+          <input type="text"  inputmode="none" 
+            readonly autocomplete="off" class="acc-PIN-input" maxlength="1" pattern="[0-9]*" placeholder="">
+       </div>
+         <small>
+         </small>
+       </div>
 
-              <button class="w-100 bg-navy-blue">
-                Confirm PIN
-              </button>
+       <div class="enter-acc-PIN-btn-container">
+       <button type="button" class="acc-PIN-btn">1</button>
+       <button type="button" class="acc-PIN-btn">2</button>
+       <button type="button" class="acc-PIN-btn">3</button>
+       <button type="button" class="acc-PIN-btn">4</button>
+       <button type="button" class="acc-PIN-btn">5</button>
+       <button type="button" class="acc-PIN-btn">6</button>
+       <button type="button" class="acc-PIN-btn">7</button>
+       <button type="button" class="acc-PIN-btn">8</button>
+       <button type="button" class="acc-PIN-btn">9</button>
+       <button type="button" class = "backspace">
+       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-delete-icon lucide-delete"><path d="M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"/><path d="m12 9 6 6"/><path d="m18 9-6 6"/></svg>
+       </button>
+       <button type="button">0</button>
+       <button type="button">1</button>
+       </div>
 
-            </div>
+       <div class="w-100">
+        <button type="button" class="w-100">
+          Confirm
+        </button>
+         <a href="" class="text-muted d-flex flex-center text-icon-container w-100 text-center">
+          forgot PIN?
+         </a>
+       <div>
+    </div>
   `;
+
+  return html;
 }
 
 export function transactionSuccessfulHTML(){
@@ -124,4 +157,57 @@ export function transactionSuccessfulHTML(){
           </div>`;
 
           return html;
+}
+
+export function generateAccountVerificationHTML(){
+  const html = `<div id="verify-account-details-container" class="custom-container flex-center flex-column">
+   <h4 class ="text-end">
+   Verification & Summary
+   </h4>
+   <ul class="w-100">
+    <li class="d-flex justify-s-between align-center">
+      <span>Status</span>
+      <span class="text-icon-container bg-blue-light BR-small pd-normal">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check-icon lucide-badge-check"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+       Verified
+      </span>
+    </li>
+    <li class="d-flex justify-s-between align-center">
+      <span>Recipient</span>
+      <span>
+       John Doe
+      </span>
+    </li>
+    <li class="d-flex justify-s-between align-center">
+      <span>Account</span>
+      <span>
+      1234567890
+      </span>
+    </li>
+    <li class="d-flex justify-s-between align-center">
+      <span>Bank</span>
+      <span>
+       BankName
+      </span>
+    </li>
+    <li class="d-flex justify-s-between align-center">
+      <span>Amount</span>
+      <span>
+       $0.00
+      </span>
+    </li>
+    <li class="d-flex justify-s-between align-center">
+      <span>Narration</span>
+      <span>
+       Payment for services
+      </span>
+    </li>
+   </ul>
+
+   <button id="confirm-intra-trasfer" class="bg-green text-white M w-100 ">
+    Confirm & tranfer
+   </button>
+  </div>`;
+
+  return html;
 }

@@ -12,6 +12,7 @@
   --navy-blue:rgb(2, 2, 153);
   --blue-hover: #a6d3fd;
   --blue-light: #cce3ff;
+  --lighter-blue: #e5f1ff;
   --red: red;
   --green : green;
   --light-green : lightgreen;
@@ -143,6 +144,12 @@ input[type=number]::-webkit-outer-spin-button {
 .font-mono { font-family: var(--font-mono); }
 /* === Font Weights === */
 .FWB{font-weight: bold;}
+.F500{font-weight: 500;}
+.F600{font-weight: 600;}
+
+.BR-small{border-radius: .5rem;}
+.BR-large{border-radius: 1rem;}
+.BR-larger{border-radius: 2rem;}
 
 
 
@@ -230,6 +237,13 @@ input[type=number]::-webkit-outer-spin-button {
 .MS{margin: .5em 0;}
 .M{margin: 1em 0;}
 .ML{margin: 1.5em 0;}
+.MR{margin: .5em;}
+
+/* padding */
+.PS{padding: .5em ;}
+.P{padding: 1em ;}
+.PL{padding: 1.5em ;}
+
 
 /* border radius */
 .br{border-radius: .5rem;}
@@ -251,6 +265,7 @@ input[type=number]::-webkit-outer-spin-button {
   background: rgba(0, 0, 0, 0.3); /* transparent dark overlay */
   backdrop-filter: blur(1px);     /* blur the background */
   -webkit-backdrop-filter: blur(1px); /* Safari support */
+  overflow: auto;
 
   opacity: 1;
   visibility: visible;

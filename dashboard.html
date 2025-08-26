@@ -12,6 +12,8 @@
 <body>
 
   <div class="master-container">
+    <div class="notification-container hide">
+    </div>
      
     <aside>
       <div class="upper-aside-container">
@@ -91,7 +93,10 @@
     <div class="main-wrapper">
       <header class="d-flex justify-end">
         <div class="d-flex align-center ">
-          <h2>Welcome, <span class="full-name">John Doe!</span></h2>
+          <h2>Welcome, <span class="full-name">
+            John Doe!
+          </span>
+         </h2>
           <figure class="profile-photo-container">
             <img src="" alt="">
           </figure>
@@ -123,89 +128,80 @@
               </div>
             </div>
             
-            <div class="d-flex flex-column bank-transfer-container">
-              <!-- tranfer container -->
-               <div>
-                  <div class="d-flex justify-s-between align-center">
-                    <h4>
-                      Same Bank Transfer 
-                    </h4>
-                    
-                    <span class="bg-blue-light text-navy-blue font-sans FWB pd-normal br-curved">
-                      step 1 of 2
-                    </span>
-                  </div>
-
-                  <p class="bg-blue-light pd-normal br ML text-start ">
-                    <strong class="text-navy-blue">
-                      Enter recipient account below. Account name will appear 
-                    </strong>
-                    after verification
-                  </p>
-
-                  <form action="">
-                    <div>
-                      <label for="">
-                        Recipient Account Number
-                      </label>
-                      <input type="text" placeholder="1234567890">
-                      <button>
-                        scan
-                      </button>
+            <div class="bank-transfer-verify-account-wrapper ">
+              <div class="d-flex flex-column custom-container">
+                <!-- tranfer container -->
+                <div>
+                    <div class="d-flex justify-s-between align-center">
+                      <h4>
+                        Same Bank Transfer 
+                      </h4>
                     </div>
-                    <div>
-                      <p>
-                        <span></span>
-                        <span>
-                          Verified
+
+                    <p class="bg-blue-light pd-normal br ML text-start ">
+                      <strong class="text-navy-blue">
+                        Enter recipient account below. Account name will appear 
+                      </strong>
+                      after verification
+                    </p>
+
+                    <form action="">
+
+                      <div class="account-no-input-container">
+                        <label for="accountNumber" class="font-sans text-muted">
+                          Recipient Account Number
+                        </label>
+                        <input type="number" name="accountNumber" id="accountNumber" placeholder="1234567890">
+                        <button title="scan" type="button" class="scan-button grid-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-line-icon lucide-scan-line"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg>
+                        </button>
+                      </div>
+
+                      <div class="d-flex  align-center bg-green text-white FWB M acount-verified-container">
+                        <svg style="margin-right: .5em;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check-icon lucide-badge-check"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                        <p  class="text-white">
                           <span>
-                            John Doe
+                            Verified &#9679;
+                            <span>
+                              John Doe
+                            </span>
                           </span>
+                        </p>
+                      </div>
+
+
+
+                      <div class="d-flex">
+                        <div class="w-100 MR">
+                          <label for="amount" class="font-sans text-muted">
+                            Amount
+                          </label>
+                          <input type="number" name="amount" id="amount" placeholder="$0.00"
+                          class="">
+                        </div>
+
+                        <div class="w-100 MR">
+                          <label for="narration" class="font-sans text-muted">
+                            Narration (optional)
+                          </label>
+                          <input type="text" name="narration" id="naration" placeholder="Payment for services"
+                          class="">
+                        </div>
+                      </div>
+
+                      <button id="intra-transfer-money-btn" type="button" class="MR text-icon-container ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-left-icon lucide-arrow-right-left"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+                        <span>
+                          Transfer
                         </span>
-                      </p>
+                      </button>
 
-                      <span>
-                        BankName
-                      </span>
-                    </div>
-                    <small>
-                      We auto-verify name and bank after you enter the account number.
-                    </small>
+                    </form>
 
-
-                    <div>
-                      <div>
-                        <label for="">
-                          Amount
-                        </label>
-                        <input type="" placeholder="$0.00">
-                      </div>
-
-                      <div>
-                        <label for="">
-                          Narration (optional)
-                        </label>
-                        <input type="" placeholder="Payment for services">
-                      </div>
-                    </div>
-
-                    <button>
-                      <span>svg</span>
-                      <span>
-                        Transfer
-                      </span>
-                    </button>
-
-                    <button>
-                      <span>svg</span>
-                      <span>
-                        Preview
-                      </span>
-                    </button>
-                  </form>
-
-               </div>
+                </div>
+              </div>
             </div>
+
           </section>
 
         <!-- ============================= CONTACT SECTION =============================== -->
@@ -472,6 +468,6 @@
       </main>
     </div>
   </div>
-  <script src="scripts/dashboard.js"></script>
+  <script type="module" src="scripts/dashboard.js"></script>
 </body>
 </html>
