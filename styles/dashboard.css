@@ -372,8 +372,35 @@ main section.active {
   background-color: var(--lighter-blue);
 }
 
-    
 
+/* ================ BUY DATA SECTION STYLES =============== */
+.data-plans-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1em;
+}
+
+.data-plans-container button{
+  background-color: transparent;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+  line-height: 1.6;
+  border: 2px solid var(--blue-hover);
+  border-radius: 1rem;
+  padding: .5em 1em;
+}
+
+.data-plans-container button .plan, .price{
+  font-weight: 600;
+  color: var(--navy-blue);
+}
+
+.data-plans-container button:hover{
+  border: 2px solid var(--blue-primary);
+}
 
 
 

@@ -2,6 +2,9 @@
 import {generateAccountVerificationHTML,generateEnterPinHtml } from './utils/htmlComponents.js';
 
 import { popUpContainer } from './utils/reUseableFunctions.js';
+import { dataPlans } from './airtime/airtime.js';
+import { generateAirtimePurchaseBundle } from './airtime/airTimeViews.js';
+
 
 const popUpContainerEl = document.querySelector('.notification-container');
 
@@ -125,3 +128,16 @@ function setupPinInput() {
     });
   });
 }
+
+
+// ================== Populate Data Plans scripts ============= //
+const dataPlansContainer = document.querySelector('.data-plans-container');
+function populateDataPlans(){
+  let html = '';
+  dataPlans.forEach(plan => {
+    html += generateAirtimePurchaseBundle(plan.plan, plan.validity, plan.price);
+  });
+  dataPlansContainer.innerHTML = html;
+}
+
+populateDataPlans()

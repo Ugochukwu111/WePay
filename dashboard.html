@@ -24,7 +24,7 @@
         </h1>
         <ul>
           <li>
-            <a href="#home" class = "text-icon-container" >
+            <a href="#buyData" class = "text-icon-container" >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
               <span>
                 Buy Data
@@ -33,7 +33,7 @@
           </li>
           
           <li>
-            <a href="#features" class = "text-icon-container" >
+            <a href="#moneyTransfer" class = "text-icon-container" >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
               <span>
                 Money Transfer
@@ -103,8 +103,59 @@
         </div>
       </header>
       <main id="main-page">
+        <!-- =================  BUY DATA SECTION =============== -->
+         <section id="buyData">
+           <div class="d-flex justify-s-between align-center">
+            <h3>
+              Buy Data
+            </h3>
+
+            <button>
+              Order History
+            </button>
+           </div>
+
+           <div class="custom-container">
+             <div>
+              <h4>
+                Enter Number
+              </h4>
+               <div>
+
+                <div class="d-flex align-center w-100 ">
+                  <input  type="text" value="MTN" readonly>
+                  <input  type="text" value="+234" readonly>
+                </div>
+
+                <div>
+                  <input type="tel" placeholder="Enter phone number" class="M">
+                </div>
+
+               </div>
+             </div>
+           </div>
+
+           <div class="custom-container">
+            <h4 class="">
+              choose a Data Plan
+            </h4>
+
+            <div class="data-plans-container ">
+              <button>
+                <span class="plan">Daily 1.5GB</span>
+                <span class="validity">validity:<span>1 day</span></span>
+                <span class="price">$1.2</span>
+              </button>
+            </div>
+            <button id="buy-data-btn" type="button" class="bg-blue-primary M">
+              Buy Data
+            </button> 
+           </div>
+         </section>
+
+
         <!-- ================ HOME SECTION =========================== -->
-          <section class="home-section" id="home">
+          <section class="home-section" id="moneyTransfer">
             <div class="d-flex justify-s-between align-center">
               <h3>
                 Trasfer Money to Bank (Same Bank)
@@ -151,7 +202,7 @@
                         <label for="accountNumber" class="font-sans text-muted">
                           Recipient Account Number
                         </label>
-                        <input type="number" name="accountNumber" id="accountNumber" placeholder="1234567890">
+                        <input type="number" name="accountNumber" id="accountNumber" step="1" placeholder="1234567890">
                         <button title="scan" type="button" class="scan-button grid-center">
                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-line-icon lucide-scan-line"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg>
                         </button>
@@ -176,7 +227,7 @@
                           <label for="amount" class="font-sans text-muted">
                             Amount
                           </label>
-                          <input type="number" name="amount" id="amount" placeholder="$0.00"
+                          <input type="number" name="amount" id="amount" step="1" placeholder="$0.00"
                           class="">
                         </div>
 
