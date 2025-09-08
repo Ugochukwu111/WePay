@@ -42,13 +42,13 @@ updateUserDetailsHtml();
 
     // On first load
     window.addEventListener("DOMContentLoaded", () => {
-      let hash = window.location.hash || "#home"; // default to home
+      let hash = window.location.hash || "#buyData"; // default to home
       showSection(hash);
     });
 
     // On hash change (navigation / back / forward)
     window.addEventListener("hashchange", () => {
-      let hash = window.location.hash || "#home";
+      let hash = window.location.hash || "#buyData";
       showSection(hash);
     });
 

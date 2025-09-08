@@ -18,6 +18,23 @@ border: 1px solid var(--blue-primary);
  outline: 1px solid var(--blue-primary);
 }
 
+.custom-container{
+  border: 2px solid  var(--blue-hover);
+  width: 100%;
+  max-width: 600px;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px var(--blue-hover);
+  background-color: var(--white);
+
+  padding: 1em;
+  margin: 2em 1em;
+}
+
+
+.custom-container h4{
+  margin: 0;
+}
+
 
 
 .text-icon-container{
@@ -63,12 +80,12 @@ button{
 }
 
 .enter-pin-container{
-    border: .5px solid var(--text-muted);
+  border: .5px solid var(--text-muted);
   padding: 1em ;
   border-radius: 1rem;
   width: 100%;
   max-width: 500px;
-  margin-bottom: 2em;
+  margin: 0;
 }
 .enter-pin-container h4,button{
   margin: 0;
@@ -316,22 +333,7 @@ main section.active {
   background-color: var(--navy-blue);
 }
 
-.custom-container{
-  border: 2px solid  var(--blue-hover);
-  width: 100%;
-  max-width: 600px;
-  border-radius: 1rem;
-  box-shadow: 2px 2px 2px var(--blue-hover);
-  background-color: var(--white);
 
-  padding: 1em;
-  margin: 2em 1em;
-}
-
-
-.custom-container h4{
-  margin: 0;
-}
 .acount-verified-container{
   padding: .3em 1em;
   border-radius: .5rem;
@@ -505,6 +507,8 @@ aside a.active svg {
   flex: 1;
 }
 
-
+.enter-pin-container{
+  max-width: 300px;
+}
 
 }
