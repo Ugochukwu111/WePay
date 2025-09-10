@@ -17,6 +17,13 @@ input:focus{
 border: 1px solid var(--blue-primary);
  outline: 1px solid var(--blue-primary);
 }
+.f-wrap{
+  flex-wrap: wrap;
+}
+
+section{
+  margin-bottom: 4em;
+}
 
 .custom-container{
   border: 2px solid  var(--blue-hover);
@@ -238,7 +245,7 @@ h2 {
 }
 h3 {
   font-size: clamp(.7rem, 4vw, 1.5rem); /* Between 25px and 35px */
-  margin: 1em 0;
+  margin: .25em 0;
 }
 h4 {
   font-size: clamp(.7rem, 3.5vw, 1.2rem); /* Between 22px and 32px */
@@ -355,11 +362,13 @@ main section.active {
 .account-pin-container input{
   width: 50px;
   height: 50px;
+  display: grid;
+  place-items: center;
 }
 
 .enter-acc-PIN-btn-container{
   display: grid;
-  grid-template-columns: repeat(3, 100px);
+  grid-template-columns: repeat(3, minmax(80px, 1fr));
   gap: .8em;
 }
 .enter-acc-PIN-btn-container button{
@@ -368,7 +377,7 @@ main section.active {
   color: var(--navy-blue);
   font-weight: 700;
   box-shadow: 1px 1px 2px var(--text-muted);
-  padding: .5em 0;
+  padding: .3em 0;
 }
 .enter-acc-PIN-btn-container button:hover{
   background-color: var(--lighter-blue);
@@ -404,6 +413,33 @@ main section.active {
   border: 2px solid var(--blue-primary);
 }
 
+/* ============== FIXED SAVINGS STYLES ============= */
+#fixed-savings-form{
+  border: 1px solid var(--navy-blue);
+  padding: .5em;
+
+}
+
+legend{
+  padding: 1em;
+}
+
+fieldset{
+  border: 2px solid red;
+  display: flex;
+  padding: .5em;
+  flex-wrap: wrap;
+}
+fieldset >*{
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+}
+fieldset > div >input{
+  border: 2px solid red;
+  padding: .5em;
+  flex: 1;
+}
 
 
 /* ============== CLASSLIST =============== */
@@ -509,6 +545,10 @@ aside a.active svg {
 
 .enter-pin-container{
   max-width: 300px;
+}
+
+.custom-container{
+  margin: .8em 0;
 }
 
 }
