@@ -21,9 +21,6 @@ border: 1px solid var(--blue-primary);
   flex-wrap: wrap;
 }
 
-section{
-  margin-bottom: 4em;
-}
 
 .custom-container{
   border: 2px solid  var(--blue-hover);
@@ -414,31 +411,52 @@ main section.active {
 }
 
 /* ============== FIXED SAVINGS STYLES ============= */
+.auto-renew-container{
+  margin-inline: 1em;
+  padding: .25em 1em;
+  border-radius: 2rem;
+  background-color: var(--blue-primary);
+  cursor: pointer;
+}
+
+.auto-renew-container button{
+  background-color: var(--white);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  transform: translateX(-80%);
+}
+
+
 #fixed-savings-form{
   border: 1px solid var(--navy-blue);
   padding: .5em;
-
 }
 
 legend{
-  padding: 1em;
+  padding: .5em;
 }
 
 fieldset{
-  border: 2px solid red;
   display: flex;
   padding: .5em;
   flex-wrap: wrap;
 }
 fieldset >*{
-  border: 2px solid red;
   display: flex;
   align-items: center;
+  margin-inline: .25em;
 }
 fieldset > div >input{
-  border: 2px solid red;
   padding: .5em;
   flex: 1;
+}
+
+.fixed-savings-section .bottom-container{
+   border: 1px solid var(--text-muted);
+   padding: .5em;
 }
 
 
@@ -475,6 +493,9 @@ aside a.active svg {
     height: 100svh;
     overflow: scroll;
   }
+  section{
+  margin-bottom: 4em;
+}
 
   aside {
     display: flex;
@@ -551,4 +572,10 @@ aside a.active svg {
   margin: .8em 0;
 }
 
+}
+
+@media(max-width: 600px){
+.upper-cotainer{
+  flex-wrap: wrap;
+}
 }

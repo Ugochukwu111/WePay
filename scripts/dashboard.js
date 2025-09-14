@@ -140,4 +140,39 @@ function populateDataPlans(){
   dataPlansContainer.innerHTML = html;
 }
 
-populateDataPlans()
+populateDataPlans();
+
+
+// ================== FIXED SAVINGS SCRIPTS ============= //
+const fixedSavingsForm = document.getElementById('fixed-savings-form');
+const fixedSavingsAmountInput = fixedSavingsForm?.querySelector('#fixed-savings-amount');
+
+fixedSavingsAmountInput?.addEventListener('input', (e) => {
+   let value = e.target.value;
+   value = value.replace(/^₦\s?/, '');
+    value = value.replace(/[^0-9]/g, '');
+     e.target.value = value ? `₦${value}` : '₦';
+});
+
+
+function toggleAutoRenew(){
+  let isAutoRenew = false;
+
+    function autoRenewOnMaturityToggle(){
+      const autoRenewToggleBtn = document.getElementById('auto-renew-btn');
+
+        if(autoRenewToggleBtn){
+            if (!isAutoRenew){
+              autoRenewToggleBtn.style.transform = 'translateX(80%)';
+              isAutoRenew = true;
+               return isAutoRenew;
+            }else{
+              autoRenewToggleBtn.style.transform = 'translateX(-80%)';
+              isAutoRenew = false;
+              return isAutoRenew;
+            }
+        }
+    }
+
+return autoRenewOnMaturityToggle()
+};
