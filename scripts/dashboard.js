@@ -4,6 +4,7 @@ import {generateAccountVerificationHTML,generateEnterPinHtml } from './utils/htm
 import { popUpContainer } from './utils/reUseableFunctions.js';
 import { dataPlans } from './airtime/airtime.js';
 import { generateAirtimePurchaseBundle } from './airtime/airTimeViews.js';
+import { durations, generateDurationsHTML } from './fixedSavings/utils.js';
 
 
 const popUpContainerEl = document.querySelector('.notification-container');
@@ -15,6 +16,28 @@ function updateUserDetailsHtml(){
   fullNameHTML.textContent = firstName || 'John Doe' ;
 }
 updateUserDetailsHtml();
+
+( async ()=>{
+   let userData = JSON.parse(localStorage.getItem('userData'));
+   let token = JSON.parse(localStorage.getItem('tokens'));
+    try{
+     const res = await fetch('https://we-pay.onrender.com/v1/user/mock/create-account', {
+       method: 'POST',
+       headers: {
+         'Authorization': `Bearer ${token?.accessToken}`,
+       }
+     });
+      if (!res.ok) {
+      const errorData = await res.json().catch(() => null);
+      throw new Error(errorData?.message || `HTTP error: ${res.status}`);
+    }
+    const data = await res.json();
+     localStorage.setItem('userDataMock', JSON.stringify(data.data));
+
+    }catch(e){
+      console.error('Fetch error:', e);
+    }
+})()
 
 
                                //================== Simple routing ============= //
@@ -146,12 +169,25 @@ populateDataPlans();
 // ================== FIXED SAVINGS SCRIPTS ============= //
 const fixedSavingsForm = document.getElementById('fixed-savings-form');
 const fixedSavingsAmountInput = fixedSavingsForm?.querySelector('#fixed-savings-amount');
+const fixedSavingsAmountError = fixedSavingsForm?.querySelector('.fixed-savings-amount-error');
 
 fixedSavingsAmountInput?.addEventListener('input', (e) => {
    let value = e.target.value;
    value = value.replace(/^₦\s?/, '');
-    value = value.replace(/[^0-9]/g, '');
-     e.target.value = value ? `₦${value}` : '₦';
+   value = value.replace(/[^0-9]/g, '');
+   e.target.value = value ? `₦${value}` : '₦';
+   
+   if(value < 5000){
+      fixedSavingsAmountError.classList.remove('d-none');
+   } else {
+      fixedSavingsAmountError.classList.add('d-none');
+   }
+
+   // Update estimated maturity value only
+   const estimatedMaturityValueEl = document.querySelector('.estimated-interest');
+   estimatedMaturityValueEl.textContent = value 
+      ? `₦${calculateEstimatedInterest(value, 10, 50)}` 
+      : '₦';
 });
 
 
@@ -165,14 +201,66 @@ function toggleAutoRenew(){
             if (!isAutoRenew){
               autoRenewToggleBtn.style.transform = 'translateX(80%)';
               isAutoRenew = true;
-               return isAutoRenew;
-            }else{
+            }else if(isAutoRenew){
               autoRenewToggleBtn.style.transform = 'translateX(-80%)';
-              isAutoRenew = false;
-              return isAutoRenew;
+              isAutoRenew = false;  
             }
         }
+        return isAutoRenew;
     }
 
-return autoRenewOnMaturityToggle()
+return autoRenewOnMaturityToggle;
 };
+const toggle = toggleAutoRenew();
+
+const autoRenewToggleContainer = document.querySelector('.auto-renew-container');
+autoRenewToggleContainer?.addEventListener('click', ()=>{
+  toggle();
+});
+// Accessibility: allow toggle via keyboard (Enter key)
+autoRenewToggleContainer?.addEventListener('keydown', (e)=>{
+ console.log(e.key);
+ if(e.key === 'Enter'){
+  toggle()
+ }
+});
+
+
+function displayDuration() {
+let html = '';
+durations.forEach((duration)=>{
+  console.log(duration);
+  
+   html += generateDurationsHTML(duration.time, duration.days, duration.rate);
+
+   document.querySelector('.duration-container').innerHTML = html ;
+});
+}
+displayDuration();
+
+function calculateEstimatedInterest(principal, rate, days){
+   rate = Number(rate) / 100;
+   days = Number(days) / 365;
+   
+   const estimatedInterest = principal * rate * days;
+
+   return estimatedInterest.toFixed(2);
+}
+
+function calculateMaturityValue(principal, rate, days) {
+   const interest = calculateEstimatedInterest(principal, rate, days);
+   return Number((principal + interest).toFixed(2));
+}
+
+const allDuration = document.querySelectorAll('input[name="duration"]');
+allDuration.forEach((duration)=>{
+  duration.addEventListener('change' , ()=>{
+   if (duration.checked){
+        const {rate, days} = duration.dataset;
+   console.log(rate, days);
+   }else{
+    return;
+   }
+  })
+  
+})

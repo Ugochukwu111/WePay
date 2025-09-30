@@ -142,7 +142,12 @@ e.preventDefault();
   try {
     const res = await fetch('https://we-pay.onrender.com/v1/auth/register', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'X-TENANT-ID': '1'  },
+      headers: { 
+        'Content-Type': 'application/json',
+         'X-TENANT-ID': '1'  ,
+         'Authorization': `Bearer ${token}`,
+        },
+
       body: JSON.stringify({
         fullName,
         email,
@@ -158,6 +163,9 @@ e.preventDefault();
 
     const data = await res.json();
     localStorage.setItem('userData', JSON.stringify( data.data.user));
+    localStorage.setItem('token', JSON.stringify(data.data.token));
+
+    const userToken = JSON.parse(localStorage.getItem('token'));
     const userData = JSON.parse(localStorage.getItem('userData'));
 
     popUpContainer(popUpContainerEl, 'show');

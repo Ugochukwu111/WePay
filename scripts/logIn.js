@@ -60,18 +60,18 @@ loginForm.addEventListener('submit', async (e) => {
     }
 
     const data = await res.json();
-    console.log('✅ User logged in:', data);
-    console.log(data.user)
-      localStorage.setItem('userData', JSON.stringify( data.data.user));
+
+      const user = data.data.user;
+      const accessToken = data.data.accessToken;
+      const refreshToken = data.data.refreshToken;
+
+// Save them in localStorage
+localStorage.setItem('userData', JSON.stringify(user));
+localStorage.setItem('tokens', JSON.stringify({ accessToken, refreshToken }));
 
     const userData = JSON.parse(localStorage.getItem('userData')) ;
-
-    console.log(userData)
-  
+    const savedTokens = JSON.parse(localStorage.getItem('tokens'));
     window.location.href = 'index.html';
-
-    
-
   } catch (err) {
     const message = err.message || 'Login failed. Please try again.';
 
@@ -94,6 +94,3 @@ loginForm.addEventListener('submit', async (e) => {
 document.getElementById('google-sign-up-btn').addEventListener('click', () => {
   window.location.href = 'https://we-pay.onrender.com/v1/auth/google';
 });
-
-
-//wepay123

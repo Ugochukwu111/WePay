@@ -449,9 +449,14 @@ fieldset >*{
   align-items: center;
   margin-inline: .25em;
 }
-fieldset > div >input{
-  padding: .5em;
-  flex: 1;
+
+.duration-container > div > input{
+   width: fit-content;
+}
+
+.duration-container >div{
+  display: flex;
+  margin: .25em .5em;
 }
 
 .fixed-savings-section .bottom-container{

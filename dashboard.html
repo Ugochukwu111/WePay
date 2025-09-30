@@ -123,8 +123,8 @@
                <div>
 
                 <div class="d-flex align-center w-100 ">
-                  <input  type="text" value="MTN" readonly>
-                  <input  type="text" value="+234" readonly>
+                  <input  type="text" value="MTN" name="network-provider" id="network-provider" readonly>
+                  <input  type="text" value="+234" name="country-code" id="country-code" readonly>
                 </div>
 
                 <div>
@@ -255,16 +255,16 @@
 
           </section>
 
-        <!-- ============================= FIXED SAVAINGS SECTION=============================== -->
+        <!-- ============================= FIXED SAVINGS SECTION=============================== -->
           <section class="fixed-savings-section" id="fixedSavings">
-              <div class="d-flex justify-s-between align-center">
+              <div class="d-flex justify-s-between align-center f-wrap">
                 <div>
                   <h3>
                     Fixed Savings
                   </h3>
                   <small class="d-block text-muted font-sans">
                       Lock funds for a set period and earn higher interest.No withdrawals until maturity.
-                    </small>
+                  </small>
                 </div>
 
                 <span class="text-muted font-sans">
@@ -278,12 +278,17 @@
                     <div class="w-100 d-flex flex-column justify-s-between P">
 
                       <div>
+                        <div class="d-flex justify-s-between align-center">
                         <label for="fixed-savings-amount" class="font-sans text-muted"> 
                           Amount to Save
                         </label>
+                        <small class="font-sans d-none fixed-savings-amount-error">
+                            Enter at least ₦5,000
+                        </small>
+                        </div>
                         <input autocomplete="off"  type="text" id="fixed-savings-amount" 
-                               pattern="[0-9]*" inputmode="numeric"
-                               name="fixed-savings-amount" step="1" required >
+                               pattern="[0-9]*" inputmode="numeric" maxlength="8"
+                               name="fixed-savings-amount"  required >
                         <small class="text-muted text-icon-container">
                           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info-icon lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                           Minimum $5,000.Funds are locked until the end of your chosen term.
@@ -299,7 +304,7 @@
                           <span>
                             off
                           </span>
-                          <div class="auto-renew-container grid-center">
+                          <div class="auto-renew-container grid-center" tabindex="0">
                             <button type="button" class="" id="auto-renew-btn"></button>
                           </div>
                            <span>
@@ -318,7 +323,7 @@
                           <span class="d-block">
                             Estimated Interest
                           </span>
-                          <span class="d-block FWB text-navy-blue M">
+                          <span class="d-block FWB text-navy-blue M estimated-interest">
                             $ 6,500.00
                           </span>
                           <span class="d-block text-muted font-sans">
@@ -335,42 +340,48 @@
                           <legend>
                             Duration
                           </legend>
+                          <div class="d-flex f-wrap align-center duration-container">
+                              <div>
+                              <input type="radio" name="duration" id="1week" value="1week" checked>
+                              <labael for="1week">
+                                1 Week 10% p.a.
+                              </label>
+                              </div>
 
-                          <div>
-                          <input type="radio" name="duration" id="1week" value="1week">
-                          <labael for="1week">
-                            1 Week 10% p.a.
-                          </label>
-                          </div>
-                                            <div>
-                          <input type="radio" name="duration" id="1month" value="1month">
-                          <label for="1month">
-                            1 Month 10% p.a.
-                          </label>
-                          </div>
-                                            <div>
-                          <input type="radio" name="duration" id="3months" value="1week">
-                          <labael for="1week">
-                            3 Months
-                          </label>
-                          </div>
-                          <div>
-                          <input type="radio" name="duration" id="6months" value="6months">
-                          <labael for="6months">
-                            6 months 
-                          </label>
-                          </div>
-                          <div>
-                          <input type="radio" name="duration" id="12months" value="12months">
-                          <label for="12months">
-                            12 Months
-                          </label>
-                          </div>
-                          <div>
-                          <input type="radio" name="duration" id="18months" value="18months">
-                          <label for="18months">
-                            18 Months
-                          </label>
+                              <div>
+                              <input type="radio" name="duration" id="1month" value="1month">
+                              <label for="1month">
+                                1 Month 10% p.a.
+                              </label>
+                              </div>
+
+                            <div>
+                              <input type="radio" name="duration" id="3months" value="1week">
+                              <labael for="1week">
+                                3 Months
+                              </label>
+                            </div>
+
+                              <div>
+                              <input type="radio" name="duration" id="6months" value="6months">
+                              <labael for="6months">
+                                6 months 
+                              </label>
+                              </div>
+
+                              <div>
+                              <input type="radio" name="duration" id="12months" value="12months">
+                              <label for="12months">
+                                12 Months
+                              </label>
+                              </div>
+
+                              <div>
+                              <input type="radio" name="duration" id="18months" value="18months">
+                              <label for="18months">
+                                18 Months
+                              </label>
+                              </div>
                           </div>
                         </fieldset>
                         <small class="text-icon-container">
@@ -380,10 +391,10 @@
                       </div>
 
                       <div>
-                        <label for="">
-                          Saving Name (optional)
+                        <label for="savings-name">
+                          Savings Name (optional)
                         </label>
-                          <input type="text" placeholder="My Savings" required>
+                          <input type="text" id="saving-name" name="saving-name" autocomplete="off" placeholder="My Savings" required>
                         <small class="font-sans text-muted text-icon-container ">
                           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info-icon lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                           Give this plan a label to recognize it easily.
@@ -395,7 +406,7 @@
                             <span class="d-block">
                               Maturity Value
                             </span>
-                            <span class="d-block FWB text-navy-blue M">
+                            <span class="d-block FWB text-navy-blue M  maturity-value">
                             $106,500.00
                             </span>
                             <span class="d-block text-muted font-sans">
