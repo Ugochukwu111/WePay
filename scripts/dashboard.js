@@ -229,8 +229,6 @@ autoRenewToggleContainer?.addEventListener('keydown', (e)=>{
 function displayDuration() {
 let html = '';
 durations.forEach((duration)=>{
-  console.log(duration);
-  
    html += generateDurationsHTML(duration.time, duration.days, duration.rate);
 
    document.querySelector('.duration-container').innerHTML = html ;
